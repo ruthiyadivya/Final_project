@@ -1,0 +1,14 @@
+<h1>Items</h1>
+<ul>
+  {% for item in items %}
+    <li><strong>{{ item.name }}</strong>: {{ item.description }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Add Item</h2>
+<form method="POST">
+  {% csrf_token %}
+  Name: <input name="name"><br>
+  Description: <input name="description"><br>
+  <button type="submit">Add</button>
+</form>
